@@ -4,35 +4,36 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
+                echo 'Cloning the repo...'
                 git branch: 'main', url: 'https://github.com/niku1908/jenkins_try.git'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Building...'
-                // Add build steps here
+                echo 'Building the project...'
+                // Add your build logic here
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running Tests...'
-                // Add test steps here
+                // Add your test steps here
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
-                // Add deploy steps here
+                echo 'Deploying the project...'
+                // Add your deployment logic here
             }
         }
     }
 
     post {
         always {
-            echo 'Pipeline finished'
+            echo 'This will always run after the stages complete'
         }
     }
 }
